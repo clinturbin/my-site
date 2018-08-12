@@ -2,8 +2,8 @@ header {
     position: relative;
     height: 30rem;
     background-image: linear-gradient(var(--main-header-color-1), var(--main-header-color-2));
-    border-bottom-left-radius: 50% 35%;
-    border-bottom-right-radius: 50% 35%;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
 }
   
 .header-name {
@@ -23,7 +23,7 @@ header {
 .header-image-container {
     height: 10em;
     width: 10em;
-    margin: 2em auto;
+    margin: 2.5em auto;
     display: flex;
     justify-content: center;
 }

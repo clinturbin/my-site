@@ -8,16 +8,20 @@ header {
   
 .header-name {
     margin: 0;
-    padding-top: 2em;
-    font: 3.2rem "Arial";
+    padding-top: 1.5em;
+    font-size: 3.5rem;
+    font-weight: bold;
     text-align: center;
+    letter-spacing: .09rem;
 }
 
 .header-title {
     margin: 0;
     padding-top: 2rem;
-    font: 2.2rem "Arial";
+    font-size: 2.2rem;
     text-align: center;
+    font-weight: bold;
+    letter-spacing: .09rem;
 }
 
 .header-image-container {

@@ -2,7 +2,7 @@
     width: 100%;
     height: 10%;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     position: relative;
     background-color: var(--primary-color);
 }
@@ -12,9 +12,9 @@
 
 .header-left {
     height: 100%;
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -29,40 +29,94 @@
     letter-spacing: .1rem;
 }
 
+/* ---------  HEADER BAR - RIGHT SIDE  --------------- */
+
+.header-right {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 1;
+}
+
+.header-navigation {
+    display: none;
+}
+
+.nav-list-item {
+    height: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    padding: 0 .5em;
+}
+
+.menu-icon-container {
+    display: flex;
+    align-items: center;
+}
+
 .menu-icon {
-    height: 3rem;
-    width: 3rem;
+    height: 3em;
+    width: 3em;
     cursor: pointer;
     margin-right: 2rem;
 }
 
-/* ---------  HEADER BAR - RIGHT SIDE  --------------- */
-
-.header-right {
+.flyout-navigation {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    background-color: var(--light-gray-color);
     opacity: 1;
+    background-color: var(--light-gray-color);
 }
 
-.nav-list-item {
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-    padding: .5rem;
+.flyout-navigation .nav-list-item {
+    padding: .5em 1em;
 }
-
 
 .visible {
+    position: relative;
     visibility: visible;
     opacity: 1;
     transition: opacity .5s linear;
 }
 
-
 .hidden {
+    position: absolute;
+    top: -999;
+    left: 0;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s .5s, opacity .5s linear;
+}
+
+@media(min-width: 360px) {
+    .menu-icon {
+        height: 4em;
+        width: 4em;
+    }
+}
+
+@media(min-width: 768px) {
+    .header-left {
+        width: 60%;
+    }
+    .header-right {
+        width: 40%;
+    }
+    .menu-icon-container {
+        display: none;
+    }
+    .header-navigation {
+        display: flex;
+        align-items: center;
+    }
+    .header-navigation .nav-list-item {
+        font-size: 2em;
+    }
+    .flyout-navigation {
+        display: none;
+    }
 }

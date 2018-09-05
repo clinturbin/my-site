@@ -1,7 +1,7 @@
-var menuIcon = document.querySelector('.menu-icon');
-var navigationItems = document.querySelector('.header-right');
+const menuIcon = document.querySelector('.menu-icon');
+const flyOutNavigation = document.querySelector('.flyout-navigation');
 
-menuIcon.addEventListener('click', function() {
-    navigationItems.classList.toggle('hidden');
-    navigationItems.classList.toggle('visible');
+menuIcon.addEventListener('click', () => {
+    flyOutNavigation.classList.toggle('hidden');
+    flyOutNavigation.classList.toggle('visible');
 });

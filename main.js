@@ -1,10 +1,7 @@
-var expandCollapseArrows = document.querySelectorAll(".section-arrow");
+var menuIcon = document.querySelector('.menu-icon');
+var navigationItems = document.querySelector('.header-right');
 
-expandCollapseArrows.forEach(function (arrow) {
-    arrow.addEventListener("click", function () {
-        this.classList.toggle("expand-button");
-        this.classList.toggle("collapse-button");
-        this.parentNode.nextElementSibling.classList.toggle("hide");
-        this.parentNode.nextElementSibling.classList.toggle("show");
-    })
-})
+menuIcon.addEventListener('click', function() {
+    navigationItems.classList.toggle('hidden');
+    navigationItems.classList.toggle('visible');
+});

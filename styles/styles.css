@@ -1,17 +1,17 @@
 @import 'header.css';
 @import 'sections.css';
+@import 'projects.css';
 
 * {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
-    --main-bg-color: rgb(71, 71, 81);
-    --main-header-color-1: rgb(82, 90, 228);
-    --main-header-color-2: rgb(126, 131, 235);
+    --primary-color: rgb(7, 160, 206);
+    --light-gray-color: rgb(156, 163, 169);
 }
 
 html, body {
     margin: 0;
-    background-color: var(--main-bg-color);
-    color: white;
     font-size: 10px;
+    height: 100%;
+    width: 100%;
 }

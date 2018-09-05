@@ -1,40 +1,68 @@
-header {
-    position: relative;
-    height: 30rem;
-    background-image: linear-gradient(var(--main-header-color-1), var(--main-header-color-2));
-    border-bottom-left-radius: 50% 15%;
-    border-bottom-right-radius: 50% 15%;
-}
-  
-.header-name {
-    margin: 0;
-    padding-top: 1.5em;
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: .09rem;
-}
-
-.header-title {
-    margin: 0;
-    padding-top: 2rem;
-    font-size: 2.2rem;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: .09rem;
-}
-
-.header-image-container {
-    height: 10em;
-    width: 10em;
-    margin: 2.5em auto;
+.header-container {
+    width: 100%;
+    height: 10%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: var(--primary-color);
 }
 
-.profile-image {
+
+/* ---------  HEADER BAR - LEFT SIDE  --------------- */
+
+.header-left {
     height: 100%;
-    text-align: center;
-    border-radius: 50%;
-    border: .3em solid var(--main-bg-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-name {
+    font-size: 2.5rem;
+    color: white;
+    margin-left: 2rem;
+    margin: 0;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1rem;
+}
+
+.menu-icon {
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+/* ---------  HEADER BAR - RIGHT SIDE  --------------- */
+
+.header-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--light-gray-color);
+    opacity: 1;
+}
+
+.nav-list-item {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .5s, opacity .5s linear;
 }

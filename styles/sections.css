@@ -20,3 +20,18 @@
     text-align: center;
     line-height: 1.5em;
 }
+
+.project-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.project-image-container {
+    width: 30em;
+    height: 30em;
+    background-image: url('../images/memory-game.jpg');
+    background-size: contain;
+    border-radius: .5em;
+    border: .5rem solid var(--light-gray-color);
+}

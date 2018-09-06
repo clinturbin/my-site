@@ -37,3 +37,9 @@ html, body {
     margin: 0;
     font-weight: bold;
 }
+
+hr {
+    width: 70%;
+    margin: auto;
+    color: var(--light-gray-color);
+}

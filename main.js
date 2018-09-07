@@ -1,6 +1,14 @@
 const menuIcon = document.querySelector('.menu-icon');
 const flyOutNavigation = document.querySelector('.flyout-navigation');
 const projectsContainer = document.querySelector('.projects-container');
+const modalBackground = document.querySelector('.modal-background');
+const closeModalButton = document.querySelector('.close-modal-button');
+const modalProjectTitle = document.querySelector('.modal-project-title');
+const modalDescriptionContent = document.querySelector('.modal-description-content');
+const modalTechnologiesContainer = document.querySelector('.modal-technologies-container');
+const modalDemoImage = document.querySelector('.modal-demo-image');
+const gitHubLink = document.querySelector('.github-link');
+const demoLink = document.querySelector('.demo-link');
 
 let projects = {
     1: {
@@ -9,11 +17,7 @@ let projects = {
         image: 'images/catch-the-sun.jpg',
         demoLink: '',
         gitLink: 'https://github.com/williammadisondavis/CatchTheSun',
-        technologies: [{name: 'HTML', image: 'images/'},
-                       {name: 'CSS', image: 'images/'},
-                       {name: 'JavaScript', image: 'images/'},
-                       {name: 'Google Maps API', image: 'images/'}
-                    ]
+        technologies: ['HTML', 'CSS', 'JavaScript', 'Google Maps API']
     },
     2: {
         title: 'Cookie Monster',
@@ -21,9 +25,7 @@ let projects = {
         image: 'images/cookie-monster.jpg',
         demoLink: '',
         gitLink: 'https://github.com/clinturbin/cookie_monster_pygame',
-        technologies: [{name: 'Python', image: 'images/'},
-                       {name: 'PyGame', image: 'images/'}
-                    ]
+        technologies: ['Pyhton', 'PyGame']
     },
     3: {
         title: 'Memory Game',
@@ -31,14 +33,12 @@ let projects = {
         image: 'images/memory-game.jpg',
         demoLink: '',
         gitLink: 'https://github.com/clinturbin/memory_game',
-        technologies: [{name: 'HTML', image: 'images/'},
-                       {name: 'CSS', image: 'images/'},
-                       {name: 'JavaScript', image: 'images/'}
-                    ]
+        technologies: ['HTML', 'CSS', 'JavaScript']
     }
 };
 
 let projectIds = Object.keys(projects);
+let currentProjectId;
 
 //--------------------------------------------------------------
 //         Add Project Display to Page for Each Project
@@ -88,12 +88,65 @@ projectIds.forEach((id) => {
 });
 
 //-----------------------------------------------------------
+//                  MODAL SCREEN
+//-----------------------------------------------------------
 
 let openProjectModal = (projectId) => {
+    modalBackground.classList.remove('hide-modal');
+    updateModalDisplay(projectId);
     console.log(projects[projectId].title + ' was clicked!')
 };
+
+let updateModalDisplay = (projectId) => {
+    modalProjectTitle.textContent = projects[projectId].title;
+    modalDemoImage.setAttribute('src', projects[projectId].image);
+    modalDescriptionContent.textContent = projects[projectId].description;
+    updateModalTechnologiesUsedDisplay(projectId);
+    gitHubLink.setAttribute('href', projects[projectId].gitLink);
+};
+
+let updateModalTechnologiesUsedDisplay = (projectId) => {
+    clearModalTechnologiesDisplay();
+    let technologiesUsed = projects[projectId].technologies;
+    technologiesUsed.forEach((technology) => {
+        addModalTechnology(technology);
+    })
+};
+
+let addModalTechnology = (technology) => {
+    let technologyDisplay = document.createElement('p');
+    technologyDisplay.classList.add('modal-technology-used');
+    technologyDisplay.textContent = technology;
+    modalTechnologiesContainer.appendChild(technologyDisplay);
+};
+
+let clearModalTechnologiesDisplay = () => {
+    let technologiesDisplayed = document.querySelectorAll('.modal-technology-used');
+    technologiesDisplayed.forEach((technology) => {
+        modalTechnologiesContainer.removeChild(technology);
+    })
+};
+
+
+
+let hideModalScreen = () => {
+    modalBackground.classList.add('hide-modal');
+};
+
+let windowOnClick = (event) => {
+    if (event.target === modalBackground) {
+        hideModalScreen();
+    }
+};
+
+
+
+
 
 menuIcon.addEventListener('click', () => {
     flyOutNavigation.classList.toggle('hidden');
     flyOutNavigation.classList.toggle('visible');
 });
+
+closeModalButton.addEventListener('click', hideModalScreen);
+window.addEventListener('click', windowOnClick);

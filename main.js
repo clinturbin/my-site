@@ -49,6 +49,9 @@ let makeProjectContainer = (projectId) => {
     projectContainer.classList.add('project-container');
     projectContainer.appendChild(createProjectTitle(projectId));
     projectContainer.appendChild(createProjectDisplay(projectId));
+    projectContainer.addEventListener('click', () => {
+        openProjectModal(projectId);
+    });
     return projectContainer;
 };
 
@@ -85,6 +88,10 @@ projectIds.forEach((id) => {
 });
 
 //-----------------------------------------------------------
+
+let openProjectModal = (projectId) => {
+    console.log(projects[projectId].title + ' was clicked!')
+};
 
 menuIcon.addEventListener('click', () => {
     flyOutNavigation.classList.toggle('hidden');

@@ -1,12 +1,14 @@
 @import 'header.css';
 @import 'sections.css';
 @import 'projects.css';
+@import 'modals.css';
 
 * {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
     --primary-color: rgb(7, 160, 206);
     --light-gray-color: rgb(156, 163, 169);
+    --modal-background: rgba(0, 0, 0, .8);
 }
 
 html, body {

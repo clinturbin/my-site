@@ -30,8 +30,11 @@
 .project-image-container {
     width: 30em;
     height: 30em;
-    background-image: url('../images/memory-game.jpg');
-    background-size: contain;
+    margin: auto;
     border-radius: .5em;
-    border: .5rem solid var(--light-gray-color);
+    border: .5rem solid var(--primary-color);
+}
+
+.project-image {
+    height: 100%;
 }

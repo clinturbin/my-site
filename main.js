@@ -9,6 +9,8 @@ const modalTechnologiesContainer = document.querySelector('.modal-technologies-c
 const modalDemoImage = document.querySelector('.modal-demo-image');
 const gitHubLink = document.querySelector('.github-link');
 const demoLink = document.querySelector('.demo-link');
+const leftModalArrow = document.querySelector('.fa-angle-left');
+const rightModalArrow = document.querySelector('.fa-angle-right');
 
 let projects = {
     1: {
@@ -38,6 +40,7 @@ let projects = {
 };
 
 let projectIds = Object.keys(projects);
+let numberOfProjects = projectIds.length;
 let currentProjectId;
 
 //--------------------------------------------------------------
@@ -50,6 +53,8 @@ let makeProjectContainer = (projectId) => {
     projectContainer.appendChild(createProjectTitle(projectId));
     projectContainer.appendChild(createProjectDisplay(projectId));
     projectContainer.addEventListener('click', () => {
+        currentProjectId = parseInt(projectId);
+        console.log(currentProjectId);
         openProjectModal(projectId);
     });
     return projectContainer;
@@ -94,7 +99,6 @@ projectIds.forEach((id) => {
 let openProjectModal = (projectId) => {
     modalBackground.classList.remove('hide-modal');
     updateModalDisplay(projectId);
-    console.log(projects[projectId].title + ' was clicked!')
 };
 
 let updateModalDisplay = (projectId) => {
@@ -127,8 +131,6 @@ let clearModalTechnologiesDisplay = () => {
     })
 };
 
-
-
 let hideModalScreen = () => {
     modalBackground.classList.add('hide-modal');
 };
@@ -139,9 +141,31 @@ let windowOnClick = (event) => {
     }
 };
 
+//----------------------------------------------------
+//                CYCLE THROUGH PROJECTS
+//----------------------------------------------------
+
+let moveBackOneProject = () => {
+    if (currentProjectId === 1) {
+        currentProjectId = numberOfProjects;
+    } else {
+        currentProjectId -= 1;
+    }
+    updateModalDisplay(currentProjectId);
+};
+
+let moveForwardOneProject = () => {
+    if (currentProjectId === numberOfProjects) {
+        currentProjectId = 1;
+    } else {
+        currentProjectId += 1;
+    }
+    updateModalDisplay(currentProjectId);
+};
 
 
-
+leftModalArrow.addEventListener('click', moveBackOneProject);
+rightModalArrow.addEventListener('click', moveForwardOneProject);
 
 menuIcon.addEventListener('click', () => {
     flyOutNavigation.classList.toggle('hidden');

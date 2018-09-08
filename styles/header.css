@@ -100,6 +100,10 @@
         height: 4em;
         width: 4em;
     }
+    .modal-demo-container {
+        width: 27em;
+        height: 27em;
+    }
 }
 
 @media(min-width: 768px) {

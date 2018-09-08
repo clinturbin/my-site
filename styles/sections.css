@@ -38,3 +38,21 @@
 .project-image {
     height: 100%;
 }
+
+.contact-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: var(--light-gray-color);
+    font-size: 1.2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.contact-icon {
+    color: var(--light-gray-color);
+    font-size: 4em;
+}

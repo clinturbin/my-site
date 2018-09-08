@@ -55,8 +55,9 @@
 }
 
 .modal-demo-container {
-    width: 28.5em;
-    height: 28.5em;
+    width: 23em;
+    height: 23em;
+    margin: auto;
 }
 
 .modal-demo-image {

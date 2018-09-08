@@ -19,8 +19,12 @@
 				<img class="menu-icon" src="images/hamburger-menu.png" alt="">
 			</div>
 			<div class="header-navigation">
-				<div class="nav-list-item">About</div>
-				<div class="nav-list-item">Projects</div>
+				<a href="#about-me" class="nav-link">
+					<div class="nav-list-item">About</div>
+				</a>
+				<a href="#projects" class="nav-link">
+					<div class="nav-list-item">Projects</div>
+				</a>
 				<a href="#contact" class="nav-link">
 					<div class="nav-list-item">Contact</div>
 				</a>
@@ -29,8 +33,12 @@
 	</header>
 	<main class="main-body-container">
 		<div class="flyout-navigation hidden">
-			<div class="nav-list-item">About</div>
-			<div class="nav-list-item">Projects</div>
+			<a href="#about-me" class="nav-link">
+				<div class="nav-list-item">About</div>
+			</a>
+			<a href="#projects" class="nav-link">
+				<div class="nav-list-item">Projects</div>	
+			</a>
 			<a href="#contact" class="nav-link">
 				<div class="nav-list-item">Contact</div>
 			</a>
@@ -38,6 +46,7 @@
 		<div class="title-container">
 			<p class="title-text">Full Stack Web Developer</p>
 		</div>
+		<hr id="about-me" class="nav-destination">
 		<div class="section-container">
 			<p class="section-title">About Me</p>
 			<div class="section-content">
@@ -58,11 +67,13 @@
 			</div>
 		</div>
 		<hr>
+		<hr id="projects" class="nav-destination">
 		<div class="section-container">
 			<p class="section-title">Projects</p>
 			<div class="section-content projects-container"></div>
 		</div>
 		<hr>
+		<hr id="contact" class="nav-destination">
 		<div id="contact" class="section-container">
 			<p class="section-title">Contact</p>
 			<div class="section-content contact-container">

@@ -33,7 +33,6 @@ html, body {
 
 .title-text {
     color: black;
-    /* color: var(--primary-color); */
     font-size: 2.5rem;
     text-align: center;
     margin: 0;
@@ -44,4 +43,8 @@ hr {
     width: 70%;
     margin: auto;
     color: var(--light-gray-color);
+}
+
+.nav-destination {
+    visibility: hidden;
 }

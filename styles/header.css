@@ -76,10 +76,12 @@
 }
 
 .visible {
-    position: relative;
+    position: fixed;
+    top: 10%;
+    left: 0;
     visibility: visible;
     opacity: 1;
-    transition: opacity .5s linear;
+    transition: opacity .3s linear;
 }
 
 .hidden {
@@ -88,7 +90,7 @@
     left: 0;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s .5s, opacity .5s linear;
+    transition: visibility 0s .3s, opacity .3s linear;
 }
 
 .nav-link {

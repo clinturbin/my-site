@@ -11,6 +11,7 @@ const gitHubLink = document.querySelector('.github-link');
 const demoLink = document.querySelector('.demo-link');
 const leftModalArrow = document.querySelector('.fa-angle-left');
 const rightModalArrow = document.querySelector('.fa-angle-right');
+const tabletProjectsContainer = document.querySelector('.tablet-projects-container');
 
 let projects = {
     1: {
@@ -27,7 +28,7 @@ let projects = {
         image: 'images/cookie-monster.jpg',
         demoLink: '',
         gitLink: 'https://github.com/clinturbin/cookie_monster_pygame',
-        technologies: ['Pyhton', 'PyGame']
+        technologies: ['Python', 'PyGame']
     },
     3: {
         title: 'Memory Game',
@@ -43,9 +44,9 @@ let projectIds = Object.keys(projects);
 let numberOfProjects = projectIds.length;
 let currentProjectId;
 
-//--------------------------------------------------------------
-//         Add Project Display to Page for Each Project
-//--------------------------------------------------------------
+//--------------------------------------------------------------------
+//  Add Project Display to Page for Each Project - Mobile Version
+//--------------------------------------------------------------------
 
 let makeProjectContainer = (projectId) => {
     let projectContainer = document.createElement('div');
@@ -92,9 +93,9 @@ projectIds.forEach((id) => {
     mobileProjectsContainer.appendChild(makeProjectContainer(id));
 });
 
-//-----------------------------------------------------------
+//-------------------------------------------------------------------
 //                  MODAL SCREEN
-//-----------------------------------------------------------
+//-------------------------------------------------------------------
 
 let openProjectModal = (projectId) => {
     modalBackground.classList.remove('hide-modal');
@@ -163,9 +164,137 @@ let moveForwardOneProject = () => {
     updateModalDisplay(currentProjectId);
 };
 
-
 leftModalArrow.addEventListener('click', moveBackOneProject);
 rightModalArrow.addEventListener('click', moveForwardOneProject);
+
+//--------------------------------------------------------------------
+//  Add Project Display to Page for Each Project - Mobile Version
+//--------------------------------------------------------------------
+
+let makeTabletProjectContainer = (projectId) => {
+    let projectContainer = document.createElement('div');
+    projectContainer.classList.add('tablet-project-container');
+    projectContainer.appendChild(addTabletProjectTitle(projectId));
+    projectContainer.appendChild(addTabletProjectContent(projectId));
+    return projectContainer;
+};
+
+let addTabletProjectTitle = (projectId) => {
+    let tabletProjectTitle = document.createElement('p');
+    tabletProjectTitle.classList.add('tablet-project-title');
+    tabletProjectTitle.textContent = projects[projectId].title;
+    return tabletProjectTitle;
+};
+
+let addTabletProjectContent = (projectId) => {
+    let tabletProjectContent = document.createElement('div');
+    tabletProjectContent.classList.add('tablet-project-content');
+    tabletProjectContent.appendChild(addProjectContentLeft(projectId));
+    tabletProjectContent.appendChild(addProjectContentRight(projectId));
+    tabletProjectContent.appendChild(addTabletProjectLinks(projectId));
+    return tabletProjectContent;
+};
+
+let addTabletProjectLinks = (projectId) => {
+    let tabletProjectLinks = document.createElement('div');
+    tabletProjectLinks.classList.add('tablet-project-links');
+    let githubLink = projects[projectId].gitLink;
+    let demoLink = projects[projectId].demoLink;
+    tabletProjectLinks.appendChild(createTabletLinkButton('Github','tablet-github-link',githubLink));
+    tabletProjectLinks.appendChild(createTabletLinkButton('Demo','tablet-demo-link',demoLink));
+    return tabletProjectLinks;
+};
+
+let createTabletLinkButton = (text, className, link) => {
+    let tabletLinkButton = document.createElement('a');
+    tabletLinkButton.classList.add('modal-link');
+    tabletLinkButton.classList.add(className);
+    tabletLinkButton.setAttribute('href', link);
+    tabletLinkButton.setAttribute('target', '_blank');
+    tabletLinkButton.appendChild(addTabletLinkButtonText(text));
+    return tabletLinkButton;
+};
+
+let addTabletLinkButtonText = (text) => {
+    let linkText = document.createElement('p');
+    linkText.classList.add('link-text');
+    linkText.textContent = text;
+    return linkText;
+};
+
+let addProjectContentLeft = (projectId) => {
+    let projectContent = document.createElement('div');
+    projectContent.classList.add('tablet-project-content-left');
+    projectContent.appendChild(addTabletProjectImage(projectId));
+    return projectContent;
+};
+
+let addTabletProjectImage = (projectId) => {
+    let projectImage = document.createElement('img');
+    projectImage.classList.add('tablet-project-image');
+    projectImage.setAttribute('src', projects[projectId].image);
+    return projectImage;
+};
+
+let addProjectContentRight = (projectId) => {
+    let projectContent = document.createElement('div');
+    projectContent.classList.add('tablet-project-content-right');
+    projectContent.appendChild(addTabletProjectDescription(projectId));
+    projectContent.appendChild(addTabletProjectTechnologies(projectId));
+    return projectContent;
+};
+
+let addTabletProjectTechnologies = (projectId) => {
+    let contentSection = document.createElement('div');
+    contentSection.classList.add('tablet-project-content-section');
+    contentSection.appendChild(addProjectSectionTitle('Technologies Used'));
+    contentSection.appendChild(addProjectTechnologies(projectId));
+    return contentSection;
+};
+
+let addProjectTechnologies = (projectId) => {
+    let technologiesContainer = document.createElement('div');
+    technologiesContainer.classList.add('tablet-technologies-container');
+    let technologiesUsed = projects[projectId].technologies;
+    technologiesUsed.forEach((technology) => {
+        technologiesContainer.appendChild(addTabletProjectTechnology(technology));
+    })
+    return technologiesContainer;
+};
+
+let addTabletProjectTechnology = (technology) => {
+    let tabletTechnology = document.createElement('p');
+    tabletTechnology.classList.add('tablet-technology');
+    tabletTechnology.textContent = technology;
+    return tabletTechnology;
+};
+
+let addTabletProjectDescription = (projectId) => {
+    let contentSection = document.createElement('div');
+    contentSection.classList.add('tablet-project-content-section');
+    contentSection.appendChild(addProjectSectionTitle('Description'));
+    contentSection.appendChild(addProjectSectionDescription(projectId));
+    return contentSection;
+};
+
+let addProjectSectionDescription = (projectId) => {
+    let projectDescription = document.createElement('p');
+    projectDescription.classList.add('tablet-description-text');
+    projectDescription.textContent = projects[projectId].description;
+    return projectDescription;
+};
+
+let addProjectSectionTitle = (title) => {
+    let sectionTitle = document.createElement('p');
+    sectionTitle.classList.add('tablet-project-section-title');
+    sectionTitle.textContent = title;
+    return sectionTitle;
+};
+
+projectIds.forEach((id) => {
+    tabletProjectsContainer.appendChild(makeTabletProjectContainer(id));
+});
+//-------------------------------------------------------------------
 
 menuIcon.addEventListener('click', () => {
     flyOutNavigation.classList.toggle('hidden');

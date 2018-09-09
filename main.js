@@ -1,6 +1,6 @@
 const menuIcon = document.querySelector('.menu-icon');
 const flyOutNavigation = document.querySelector('.flyout-navigation');
-const projectsContainer = document.querySelector('.projects-container');
+const mobileProjectsContainer = document.querySelector('.mobile-projects-container');
 const modalBackground = document.querySelector('.modal-background');
 const closeModalButton = document.querySelector('.close-modal-button');
 const modalProjectTitle = document.querySelector('.modal-project-title');
@@ -89,7 +89,7 @@ let addProjectImage = (projectId) => {
 };
 
 projectIds.forEach((id) => {
-    projectsContainer.appendChild(makeProjectContainer(id));
+    mobileProjectsContainer.appendChild(makeProjectContainer(id));
 });
 
 //-----------------------------------------------------------

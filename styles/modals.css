@@ -110,7 +110,6 @@
     font-size: 1.5em;
     font-weight: 600;
     letter-spacing: .05em;
-    /* background-color: var(--light-gray-color); */
     background-color: var(--primary-color);
     width: 5em;
     padding: .5em;
@@ -133,4 +132,11 @@
 
 .modal-section-divider {
     margin-top: 2em;
+}
+
+@media(min-width: 360px) {
+    .modal-demo-container {
+        width: 27em;
+        height: 27em;
+    }
 }

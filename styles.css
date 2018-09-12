@@ -4,6 +4,7 @@
     --primary-color: rgb(7, 160, 206);
     --light-gray-color: rgb(156, 163, 169);
     --modal-background: rgba(0, 0, 0, .8);
+    --off-white: rgb(240, 240, 240);
 }
 
 html, body {
@@ -13,6 +14,10 @@ html, body {
     width: 100%;
 }
 
+/* ------------------------------------------------- */
+/*                Header Bar                         */
+/* ------------------------------------------------- */
+
 .header-container {
     width: 100%;
     height: 10%;
@@ -20,7 +25,6 @@ html, body {
     position: relative;
     background-color: var(--primary-color);
 }
-
 
 /* ---------  HEADER BAR - LEFT SIDE  --------------- */
 
@@ -112,7 +116,9 @@ html, body {
     text-decoration: none;
 }
 
-/* --------- MAIN BODY CONTAINER ------------- */
+/* ------------------------------------------- */
+/*           Main Body Container               */
+/* ------------------------------------------- */
 
 .main-body-container {
     height: 90%;
@@ -127,7 +133,7 @@ html, body {
 
 .title-text {
     color: black;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     margin: 0;
     font-weight: bold;
@@ -149,7 +155,7 @@ hr {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
@@ -164,55 +170,62 @@ hr {
     margin-bottom: 1em;
     text-align: center;
     line-height: 1.5em;
+    font-weight: 600;
+}
+
+/* ----------------------------------------- */
+/*        Project Section - Mobile View      */
+/* ----------------------------------------- */
+.project-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+
 }
 
 .project-title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: .5em;
+    margin: 0 0 .5em 0;
+    font-weight: 600;
 }
 
 .project-image-container {
-    width: 30em;
-    height: 30em;
+    width: 85%;
     margin: auto;
     border-radius: .5em;
-    /* border: .5rem solid var(--primary-color); */
 }
 
-.project-image {
-    height: 100%;
+.project-image, .tablet-project-image {
+    width: 100%;
+    border-radius: 1em;
+    border: 0px solid black;
+    box-shadow: 8px 7px 34px -12px #000000;
 }
 
-.contact-container {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.contact-link {
-    text-decoration: none;
-    color: var(--light-gray-color);
-    font-size: 1.2rem;
-    text-align: center;
-    flex: 1;
-}
-
-.contact-icon {
-    color: var(--light-gray-color);
-    font-size: 4em;
-}
-
-/* ------ Project Section for Tablet and Above -------- */
+/* ---------------------------------------------------- */
+/*        Project Section for Tablet View and Above     */
+/* ---------------------------------------------------- */
 .tablet-projects-container {
     display: none;
 }
 
-.tablet-project-container {
+.tablet-project-container, .project-container {
     padding: 1.5em;
     border: .5rem solid var(--primary-color);
     border-radius: .5rem;
     margin-bottom: 3em;
+    background-color: var(--off-white)
 }
+
+.tablet-project-container, 
+.link-text, 
+.project-container {
+    box-shadow: 3px 3px 9px -3px var(--primary-color);
+}
+
 .tablet-project-title {
     font-size: 2em;
     margin: 0;
@@ -235,14 +248,9 @@ hr {
     align-items: center;
 }
 
-.tablet-project-image {
-    width: 100%;
-}
-
 .tablet-project-content-right {
-    /* width: 68%; */
     flex: 1;
-    margin-left: 1em;
+    margin-left: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -275,6 +283,7 @@ hr {
     margin: auto;
     border-radius: .5em;
     padding: .5em;
+    box-shadow: 18px 17px 53px -14px var(--light-gray-color);
 }
 
 .tablet-technology {
@@ -290,7 +299,29 @@ hr {
     margin-top: 1em;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+/* ---------------------------------- */
+/*       Contact Section              */
+/* ---------------------------------- */
+
+.contact-container {
+    display: flex;
     justify-content: space-evenly;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: var(--light-gray-color);
+    font-size: 1.2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.contact-icon {
+    color: var(--light-gray-color);
+    font-size: 4em;
 }
 
 /* ------------------------------------------------- */
@@ -453,7 +484,12 @@ hr {
     .header-right {
         width: 40%;
     }
-    .menu-icon-container {
+    .link-text {
+        margin: .5em;
+    }
+    .menu-icon-container, 
+    .flyout-navigation,
+    .mobile-projects-container {
         display: none;
     }
     .header-navigation {
@@ -463,14 +499,8 @@ hr {
     .header-navigation .nav-list-item {
         font-size: 2em;
     }
-    .flyout-navigation {
-        display: none;
-    }
     .about-me-content {
         text-align: left;
-    }
-    .mobile-projects-container {
-        display: none;
     }
     .tablet-projects-container {
         display: block;
@@ -481,46 +511,34 @@ hr {
     .tablet-project-links {
         width: 15%;
         flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
         margin-top: 0;
     }
 }
 
 @media(min-width: 1200px) {
-    .header-name {
-        font-size: 3.5rem;
+    .icon-text {
+        font-size: 1.5rem;
     }
-    .header-navigation .nav-list-item {
+    .about-me-content, 
+    .tablet-description-text, 
+    .tablet-technology, 
+    .link-text {
+        font-size: 2rem;
+    }
+    .header-navigation .nav-list-item,
+    .tablet-project-title,
+    .tablet-project-section-title {
         font-size: 2.5rem;
-    }
-    .title-text {
-        font-size: 3.5rem;
     }
     .section-title {
         font-size: 3rem;
     }
-    .about-me-content {
-        font-size: 2rem;
-    }
-    .tablet-project-title {
-        font-size: 2.5rem;
-    }
-    .tablet-project-section-title {
-        font-size: 2.5rem;
-    }
-    .tablet-description-text {
-        font-size: 2rem;
-    }
-    .tablet-technology {
-        font-size: 2rem;
-    }
-    .link-text {
-        font-size: 2rem;
+    .header-name, .title-text {
+        font-size: 3.5rem;
     }
     .contact-icon {
         font-size: 7em;
-    }
-    .icon-text {
-        font-size: 1.5rem;
     }
 }

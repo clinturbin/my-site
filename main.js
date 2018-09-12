@@ -8,7 +8,7 @@ const modalDescriptionContent = document.querySelector('.modal-description-conte
 const modalTechnologiesContainer = document.querySelector('.modal-technologies-container');
 const modalDemoImage = document.querySelector('.modal-demo-image');
 const gitHubLink = document.querySelector('.github-link');
-const demoLink = document.querySelector('.demo-link');
+const modalDemoLink = document.querySelector('.modal-demo-link');
 const leftModalArrow = document.querySelector('.fa-angle-left');
 const rightModalArrow = document.querySelector('.fa-angle-right');
 const tabletProjectsContainer = document.querySelector('.tablet-projects-container');
@@ -18,7 +18,7 @@ let projects = {
         title: 'Catch the Sun',
         description: `Web application for active explorers yearning to discover their next adventure, find hidden gem sceneries, and catch a beautiful sunset`,
         image: 'images/catch-the-sun.jpg',
-        demoLink: '',
+        demoLink: 'https://youtu.be/3T0whD_oIG0',
         gitLink: 'https://github.com/williammadisondavis/CatchTheSun',
         technologies: ['HTML', 'CSS', 'JavaScript', 'Google Maps API']
     },
@@ -26,7 +26,7 @@ let projects = {
         title: 'Cookie Monster',
         description: `Game where player maneuvers Cookie Monster around the screen trying to catch cookies while avoiding falling bombs`,
         image: 'images/cookie-monster.jpg',
-        demoLink: '',
+        demoLink: 'https://youtu.be/QQ3vjUYUUmo',
         gitLink: 'https://github.com/clinturbin/cookie_monster_pygame',
         technologies: ['Python', 'PyGame']
     },
@@ -34,7 +34,7 @@ let projects = {
         title: 'Memory Game',
         description: `Memory game where player has to match randomly generated color pairs that are displayed on either a 4x4 or 6x6 board`,
         image: 'images/memory-game.jpg',
-        demoLink: '',
+        demoLink: 'https://youtu.be/fEE3iTA69ZQ',
         gitLink: 'https://github.com/clinturbin/memory_game',
         technologies: ['HTML', 'CSS', 'JavaScript']
     }
@@ -108,6 +108,7 @@ let updateModalDisplay = (projectId) => {
     modalDescriptionContent.textContent = projects[projectId].description;
     updateModalTechnologiesUsedDisplay(projectId);
     gitHubLink.setAttribute('href', projects[projectId].gitLink);
+    modalDemoLink.setAttribute('href', projects[projectId].demoLink);
 };
 
 let updateModalTechnologiesUsedDisplay = (projectId) => {

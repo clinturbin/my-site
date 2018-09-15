@@ -101,7 +101,7 @@ html, body {
 
 .visible {
     position: fixed;
-    top: 10%;
+    top: 12%;
     left: 0;
     visibility: visible;
     opacity: 1;
@@ -117,7 +117,7 @@ html, body {
     transition: visibility 0s .3s, opacity .3s linear;
 }
 
-.nav-link {
+.link {
     text-decoration: none;
 }
 
@@ -192,6 +192,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .project-media {
@@ -203,8 +204,85 @@ hr {
     width: 85%;
 }
 
+.project-info-modal {
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: var(--black);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.modal-description {
+    color: white;
+    margin: 0;
+    text-align: center;
+    letter-spacing: .05em;
+    width: 85%;
+}
+
+.technologies-used {
+    background-color: var(--light-gray-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 85%;
+    border-radius: .5em;
+}
+
+.technology-font {
+    color: white;
+    font-size: 1.5rem;
+    padding: .2em;
+    margin: 0;
+    letter-spacing: .09em;
+}
+
 .project-video {
     display: none;
+}
+
+.project-links {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.project-link-button {
+    margin: 0 .5em;;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: .09em;
+    background-color: var(--primary-color);
+    font-weight: 800;
+    padding: .5em;
+    border-radius: .2em;
+}
+
+.modal-font {
+    font-size: 1.2rem;
+}
+
+.hidden-modal {
+    position: absolute;
+    top: -999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+
+.visible-modal {
+    position: absolute;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s linear;
 }
 /* ---------------------------------- */
 /*       Contact Section              */
@@ -216,7 +294,6 @@ hr {
 }
 
 .contact-link {
-    text-decoration: none;
     color: var(--light-gray-color);
     font-size: 1.2rem;
     text-align: center;
@@ -226,18 +303,6 @@ hr {
 .contact-icon {
     color: var(--light-gray-color);
     font-size: 4em;
-}
-
-.link-text {
-    margin: 0;
-    color: white;
-    font-size: 1.5em;
-    font-weight: 600;
-    letter-spacing: .05em;
-    background-color: var(--primary-color);
-    width: 5em;
-    padding: .5em;
-    border-radius: .2em;
 }
 
 /* -------------------------------------------------- */
@@ -252,6 +317,15 @@ hr {
         width: 27em;
         height: 27em;
     }
+    .modal-font {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 500px) {
+    .modal-font {
+        font-size: 2rem;
+    }
 }
 
 @media(min-width: 620px) {
@@ -260,6 +334,9 @@ hr {
     }
     .project-video {
         display: block;
+    }
+    .project-info-modal {
+        display: none;
     }
 }
 

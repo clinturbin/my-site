@@ -253,6 +253,8 @@ hr {
     padding: .2em;
     margin: 0;
     letter-spacing: .09em;
+    display: flex;
+    align-items: center;
 }
 
 .project-video {
@@ -275,6 +277,7 @@ hr {
     font-weight: 800;
     padding: .5em;
     border-radius: .2em;
+    text-align: center;
 }
 
 .hidden-modal {
@@ -471,4 +474,54 @@ hr {
     .contact-icon {
         font-size: 7em;
     }
+    .section-container {
+        width: 1030px;
+    }
+    .project-content {
+        display: flex;
+        width: 95%;
+        margin: auto;
+    }
+    .project-video {
+        width: 480px;
+        height: 270px;;
+    }
+    .project-info-description {
+        text-align: left;
+        padding: 0 1em;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .project-links-container {
+        width: 140px;
+    }
+    .project-links {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .project-link-button {
+        width: 100%;
+        margin: 0 0 3rem 0;
+    }
+    .technologies-used {
+        width: 75%;
+    }
+    .technology-font {
+        font-size: 1.5rem;
+    }
+    .project-info-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 1rem;
+    }
+    .project-info-title {
+        height: 10%;
+    }
+    .project-info-description, .technologies-used {
+        height: 40%;
+    }
+
 }

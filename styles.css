@@ -4,7 +4,7 @@
     --primary-color: rgb(55, 211, 250);
     --light-gray-color: rgb(156, 163, 169);
     --modal-background: rgba(0, 0, 0, .8);
-    --off-white: rgb(240, 240, 240);
+    --off-white: rgb(230, 230, 230);
     --black: rgb(32, 35, 42);
 }
 
@@ -73,6 +73,10 @@ html, body {
     color: white;
     cursor: pointer;
     padding: 0 .5em;
+}
+
+.nav-list-item:hover {
+    color: var(--primary-color);
 }
 
 .menu-icon-container {
@@ -159,7 +163,7 @@ hr {
 }
 
 .about-me-content {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
     margin-bottom: 1em;
     text-align: center;
@@ -184,6 +188,7 @@ hr {
     text-align: center;
     font-weight: 600;
     margin: 0;
+    letter-spacing: .03em;
 }
 
 .project-media-container {
@@ -197,8 +202,8 @@ hr {
 
 .project-media {
     border-radius: 1em;
-    border: 0px solid black;
-    box-shadow: 8px 7px 34px -12px black;
+    border: 0px solid var(--black);
+    box-shadow: 8px 7px 34px -12px var(--black);
 }
 .project-image {
     width: 85%;
@@ -209,16 +214,17 @@ hr {
     height: 100%;
     position: absolute;
     top: 0;
-    background-color: var(--black);
+    background-color: var(--modal-background);
     border-radius: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     overflow-y: scroll;
+    padding: 1em 0;
 }
 
-.modal-description {
+.project-info-description {
     color: white;
     margin: 0;
     text-align: center;
@@ -227,17 +233,23 @@ hr {
 }
 
 .technologies-used {
-    background-color: var(--light-gray-color);
+    background-color: var(--black);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 85%;
+    width: 360px;
     border-radius: .5em;
+    margin: auto;
+    padding: .5em;
+}
+
+.project-info-modal .technologies-used {
+    margin: 0;
 }
 
 .technology-font {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: .2em;
     margin: 0;
     letter-spacing: .09em;
@@ -251,7 +263,7 @@ hr {
     width: 85%;
     display: flex;
     justify-content: center;
-
+    margin: 0 auto;
 }
 
 .project-link-button {
@@ -263,10 +275,6 @@ hr {
     font-weight: 800;
     padding: .5em;
     border-radius: .2em;
-}
-
-.modal-font {
-    font-size: 1.2rem;
 }
 
 .hidden-modal {
@@ -284,6 +292,24 @@ hr {
     opacity: 1;
     transition: opacity .3s linear;
 }
+
+.project-info-container {
+    display: none;
+}
+
+.project-links-container {
+    display: none;
+}
+
+.project-info-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin: .5em;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
 /* ---------------------------------- */
 /*       Contact Section              */
 /* ---------------------------------- */
@@ -317,14 +343,24 @@ hr {
         width: 27em;
         height: 27em;
     }
-    .modal-font {
+    .project-info-description {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 400px) {
+    .project-info-description,
+    .technology-font {
         font-size: 1.5rem;
     }
 }
 
 @media(min-width: 500px) {
-    .modal-font {
-        font-size: 2rem;
+    .about-me-content,
+    .project-info-description,
+    .technology-font,
+    .project-link-button {
+        font-size: 1.7rem;
     }
 }
 
@@ -338,9 +374,30 @@ hr {
     .project-info-modal {
         display: none;
     }
+    .project-info-container {
+        display: block;
+        width: 480px;
+        margin: auto;
+    }
+    .project-links-container {
+        display: block;
+        margin-top: 2.5em;
+    }
+    .project-info-description {
+        color: black;
+        padding: 0 1em;
+        margin: auto;
+        width: 95%;
+    }
+    .project-title {
+        font-size: 2.5rem;
+    }
 }
 
 @media(min-width: 768px) {
+    .project-info-container {
+        width: 560px;
+    }
     .section-container {
         width: 610px;
     }
@@ -371,6 +428,12 @@ hr {
     }
     .tablet-projects-container {
         display: block;
+    }
+    .header-name {
+        font-size: 3.5rem;
+    }
+    .contact-icon {
+        font-size: 5em;
     }
 }
 

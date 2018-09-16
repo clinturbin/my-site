@@ -3,7 +3,6 @@
     font-family: 'Nunito', sans-serif;
     --primary-color: rgb(55, 211, 250);
     --light-gray-color: rgb(156, 163, 169);
-    --modal-background: rgba(0, 0, 0, .8);
     --off-white: rgb(230, 230, 230);
     --black: rgb(32, 35, 42);
 }
@@ -220,7 +219,7 @@ hr {
     height: 100%;
     position: absolute;
     top: 0;
-    background-color: var(--modal-background);
+    background-color: var(--black);
     border-radius: 1em;
     display: flex;
     flex-direction: column;

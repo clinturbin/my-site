@@ -255,6 +255,7 @@ hr {
 
 .project-info-modal .technologies-used {
     margin: 0;
+    width: 85%;
 }
 
 .technology-font {

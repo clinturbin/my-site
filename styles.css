@@ -338,6 +338,28 @@ hr {
     letter-spacing: .04em;
 }
 
+/* ----------------------------------- */
+/*           Skills Section            */
+/* ----------------------------------- */
+.skills-container {
+    /* width: 80%; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--black);
+    border-radius: .5em;
+    padding: 1.5em;
+    box-shadow: 8px 7px 34px -12px var(--black);
+}
+
+.skill-text {
+    color: white;
+    padding:.2em .5em;
+    margin: 0;
+    font-size: 1.7rem;
+}
+
 /* ---------------------------------- */
 /*       Contact Section              */
 /* ---------------------------------- */
@@ -420,6 +442,9 @@ hr {
     .project-title {
         font-size: 2.5rem;
     }
+    .skill-text {
+        font-size: 2rem;
+    }
 }
 
 @media(min-width: 768px) {
@@ -476,6 +501,9 @@ hr {
     .photo-container {
         width: 250px;
         height: 250px;
+    }
+    .skills-container {
+        width: 90%;
     }
 }
 

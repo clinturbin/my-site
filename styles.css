@@ -151,6 +151,21 @@ hr {
     visibility: hidden;
 }
 
+.photo-container {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 4em;
+    border-radius: 50%;
+    background: url('images/clinturbin.jpg');
+    background-size: cover;
+    border: 3px solid var(--light-gray-color);
+}
+
+.photo {
+    width: 100%;
+}
+
 .section-container {
     width: 80%;
     margin: 3em auto;
@@ -457,6 +472,10 @@ hr {
         justify-content: space-evenly;
         align-items: center;
         margin-top: 0;
+    }
+    .photo-container {
+        width: 250px;
+        height: 250px;
     }
 }
 
